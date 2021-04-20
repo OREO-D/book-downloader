@@ -1,0 +1,14 @@
+{
+  "name": "book-downloader1.0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "author": "0r3on",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
