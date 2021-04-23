@@ -10,11 +10,18 @@ btn.addEventListener('click', () => {
   url = `https://plmcbks.amanoteam.com/search/books?query_name=${get_value}&search_type=fast&page_number=0&max_items=1000`
 
   fetch(url)
-    .then(function (res) {
-      return res.json()
+    .then((res) => {
+      if(!res.ok){
+        para = document.createElement('p')
+        texto = document.createTextNode('No results :/')
+        para.classList.add('textErr')
+        para.appendChild(texto)
+        content.appendChild(para)
+      }
+      return res.json();
     })
-    .then(function (data) {
-      total_book = data.results.total_results
+    .then((data) =>{
+      
       dt = data.results.items
 
       for (let content_ = 0; content_ <= 1000; content_++)
